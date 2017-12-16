@@ -1,0 +1,13 @@
+/*********************************************
+ * OPL 12.6.0.0 Data
+ * Author: Diya Joseph
+ * Creation Date: 29-Nov-2017 at 3:00:36 PM
+ *********************************************/
+
+demand_h=2;
+nNurses=10;
+total_hours=24;
+minHours=4;
+maxHours=10;
+maxConsec=5;
+maxPresence=24;
