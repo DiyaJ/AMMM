@@ -1,0 +1,270 @@
+nNurses = 213
+demandH[0] = 94 demandH[1] = 41 demandH[2] = 129 demandH[3] = 128 demandH[4] = 85 demandH[5] = 20 demandH[6] = 126 demandH[7] = 62 
+demandH[8] = 94 demandH[9] = 80 demandH[10] = 119 demandH[11] = 48 demandH[12] = 70 demandH[13] = 131 demandH[14] = 53 demandH[15] = 147 
+demandH[16] = 137 demandH[17] = 4 demandH[18] = 75 demandH[19] = 67 demandH[20] = 146 demandH[21] = 143 demandH[22] = 41 demandH[23] = 107 
+minHours = 6
+maxHours = 8
+maxConsec = 1
+maxPresence = 15
+
+nNurses = 594
+demandH[0] = 19 demandH[1] = 130 demandH[2] = 307 demandH[3] = 371 demandH[4] = 306 demandH[5] = 57 demandH[6] = 96 demandH[7] = 331 
+demandH[8] = 126 demandH[9] = 243 demandH[10] = 262 demandH[11] = 23 demandH[12] = 261 demandH[13] = 329 demandH[14] = 205 demandH[15] = 279 
+demandH[16] = 265 demandH[17] = 176 demandH[18] = 53 demandH[19] = 106 demandH[20] = 170 demandH[21] = 317 demandH[22] = 190 demandH[23] = 63 
+minHours = 5
+maxHours = 8
+maxConsec = 3
+maxPresence = 13
+
+nNurses = 808
+demandH[0] = 175 demandH[1] = 471 demandH[2] = 294 demandH[3] = 318 demandH[4] = 559 demandH[5] = 510 demandH[6] = 519 demandH[7] = 468 
+demandH[8] = 489 demandH[9] = 530 demandH[10] = 81 demandH[11] = 194 demandH[12] = 102 demandH[13] = 387 demandH[14] = 145 demandH[15] = 298 
+demandH[16] = 187 demandH[17] = 126 demandH[18] = 519 demandH[19] = 280 demandH[20] = 506 demandH[21] = 387 demandH[22] = 10 demandH[23] = 138 
+minHours = 8
+maxHours = 9
+maxConsec = 3
+maxPresence = 11
+
+nNurses = 811
+demandH[0] = 387 demandH[1] = 275 demandH[2] = 514 demandH[3] = 258 demandH[4] = 274 demandH[5] = 30 demandH[6] = 523 demandH[7] = 415 
+demandH[8] = 232 demandH[9] = 431 demandH[10] = 245 demandH[11] = 536 demandH[12] = 131 demandH[13] = 556 demandH[14] = 206 demandH[15] = 325 
+demandH[16] = 479 demandH[17] = 226 demandH[18] = 479 demandH[19] = 308 demandH[20] = 269 demandH[21] = 536 demandH[22] = 274 demandH[23] = 466 
+minHours = 6
+maxHours = 11
+maxConsec = 3
+maxPresence = 17
+
+nNurses = 130
+demandH[0] = 30 demandH[1] = 73 demandH[2] = 72 demandH[3] = 24 demandH[4] = 25 demandH[5] = 36 demandH[6] = 51 demandH[7] = 26 
+demandH[8] = 39 demandH[9] = 4 demandH[10] = 83 demandH[11] = 22 demandH[12] = 61 demandH[13] = 24 demandH[14] = 68 demandH[15] = 62 
+demandH[16] = 67 demandH[17] = 50 demandH[18] = 85 demandH[19] = 7 demandH[20] = 3 demandH[21] = 1 demandH[22] = 57 demandH[23] = 28 
+minHours = 5
+maxHours = 12
+maxConsec = 5
+maxPresence = 23
+
+nNurses = 488
+demandH[0] = 123 demandH[1] = 290 demandH[2] = 242 demandH[3] = 97 demandH[4] = 311 demandH[5] = 92 demandH[6] = 319 demandH[7] = 85 
+demandH[8] = 87 demandH[9] = 143 demandH[10] = 79 demandH[11] = 246 demandH[12] = 111 demandH[13] = 286 demandH[14] = 188 demandH[15] = 109 
+demandH[16] = 261 demandH[17] = 50 demandH[18] = 329 demandH[19] = 149 demandH[20] = 186 demandH[21] = 270 demandH[22] = 7 demandH[23] = 321 
+minHours = 6
+maxHours = 10
+maxConsec = 1
+maxPresence = 19
+
+nNurses = 12
+demandH[0] = 5 demandH[1] = 2 demandH[2] = 5 demandH[3] = 3 demandH[4] = 0 demandH[5] = 6 demandH[6] = 3 demandH[7] = 1 
+demandH[8] = 6 demandH[9] = 5 demandH[10] = 0 demandH[11] = 7 demandH[12] = 6 demandH[13] = 4 demandH[14] = 0 demandH[15] = 6 
+demandH[16] = 1 demandH[17] = 3 demandH[18] = 2 demandH[19] = 3 demandH[20] = 3 demandH[21] = 0 demandH[22] = 2 demandH[23] = 2 
+minHours = 7
+maxHours = 11
+maxConsec = 6
+maxPresence = 15
+
+nNurses = 153
+demandH[0] = 72 demandH[1] = 30 demandH[2] = 62 demandH[3] = 31 demandH[4] = 40 demandH[5] = 103 demandH[6] = 68 demandH[7] = 52 
+demandH[8] = 104 demandH[9] = 21 demandH[10] = 41 demandH[11] = 94 demandH[12] = 101 demandH[13] = 97 demandH[14] = 44 demandH[15] = 26 
+demandH[16] = 98 demandH[17] = 102 demandH[18] = 85 demandH[19] = 37 demandH[20] = 15 demandH[21] = 87 demandH[22] = 65 demandH[23] = 26 
+minHours = 8
+maxHours = 12
+maxConsec = 5
+maxPresence = 14
+
+nNurses = 169
+demandH[0] = 26 demandH[1] = 111 demandH[2] = 8 demandH[3] = 51 demandH[4] = 92 demandH[5] = 26 demandH[6] = 1 demandH[7] = 46 
+demandH[8] = 71 demandH[9] = 62 demandH[10] = 75 demandH[11] = 18 demandH[12] = 7 demandH[13] = 31 demandH[14] = 77 demandH[15] = 51 
+demandH[16] = 93 demandH[17] = 34 demandH[18] = 8 demandH[19] = 67 demandH[20] = 63 demandH[21] = 66 demandH[22] = 69 demandH[23] = 29 
+minHours = 8
+maxHours = 10
+maxConsec = 5
+maxPresence = 15
+
+nNurses = 933
+demandH[0] = 86 demandH[1] = 177 demandH[2] = 57 demandH[3] = 80 demandH[4] = 541 demandH[5] = 375 demandH[6] = 640 demandH[7] = 243 
+demandH[8] = 415 demandH[9] = 623 demandH[10] = 443 demandH[11] = 385 demandH[12] = 145 demandH[13] = 199 demandH[14] = 600 demandH[15] = 263 
+demandH[16] = 305 demandH[17] = 474 demandH[18] = 499 demandH[19] = 645 demandH[20] = 477 demandH[21] = 40 demandH[22] = 355 demandH[23] = 282 
+minHours = 8
+maxHours = 12
+maxConsec = 1
+maxPresence = 23
+
+nNurses = 369
+demandH[0] = 61 demandH[1] = 189 demandH[2] = 151 demandH[3] = 229 demandH[4] = 73 demandH[5] = 35 demandH[6] = 228 demandH[7] = 80 
+demandH[8] = 222 demandH[9] = 145 demandH[10] = 57 demandH[11] = 137 demandH[12] = 89 demandH[13] = 37 demandH[14] = 58 demandH[15] = 60 
+demandH[16] = 256 demandH[17] = 175 demandH[18] = 150 demandH[19] = 207 demandH[20] = 101 demandH[21] = 132 demandH[22] = 122 demandH[23] = 45 
+minHours = 6
+maxHours = 12
+maxConsec = 3
+maxPresence = 21
+
+nNurses = 952
+demandH[0] = 142 demandH[1] = 543 demandH[2] = 112 demandH[3] = 282 demandH[4] = 418 demandH[5] = 174 demandH[6] = 91 demandH[7] = 476 
+demandH[8] = 640 demandH[9] = 153 demandH[10] = 18 demandH[11] = 251 demandH[12] = 229 demandH[13] = 72 demandH[14] = 392 demandH[15] = 606 
+demandH[16] = 40 demandH[17] = 312 demandH[18] = 406 demandH[19] = 123 demandH[20] = 102 demandH[21] = 277 demandH[22] = 540 demandH[23] = 352 
+minHours = 5
+maxHours = 8
+maxConsec = 2
+maxPresence = 14
+
+nNurses = 50
+demandH[0] = 19 demandH[1] = 0 demandH[2] = 16 demandH[3] = 26 demandH[4] = 33 demandH[5] = 5 demandH[6] = 22 demandH[7] = 20 
+demandH[8] = 1 demandH[9] = 2 demandH[10] = 17 demandH[11] = 31 demandH[12] = 22 demandH[13] = 27 demandH[14] = 26 demandH[15] = 13 
+demandH[16] = 20 demandH[17] = 14 demandH[18] = 22 demandH[19] = 24 demandH[20] = 27 demandH[21] = 29 demandH[22] = 3 demandH[23] = 29 
+minHours = 6
+maxHours = 8
+maxConsec = 2
+maxPresence = 11
+
+nNurses = 142
+demandH[0] = 65 demandH[1] = 57 demandH[2] = 94 demandH[3] = 51 demandH[4] = 72 demandH[5] = 76 demandH[6] = 60 demandH[7] = 39 
+demandH[8] = 9 demandH[9] = 79 demandH[10] = 6 demandH[11] = 74 demandH[12] = 38 demandH[13] = 35 demandH[14] = 86 demandH[15] = 82 
+demandH[16] = 75 demandH[17] = 7 demandH[18] = 57 demandH[19] = 57 demandH[20] = 91 demandH[21] = 40 demandH[22] = 83 demandH[23] = 28 
+minHours = 5
+maxHours = 12
+maxConsec = 7
+maxPresence = 17
+
+nNurses = 820
+demandH[0] = 225 demandH[1] = 223 demandH[2] = 487 demandH[3] = 416 demandH[4] = 378 demandH[5] = 357 demandH[6] = 190 demandH[7] = 518 
+demandH[8] = 546 demandH[9] = 312 demandH[10] = 252 demandH[11] = 68 demandH[12] = 293 demandH[13] = 106 demandH[14] = 255 demandH[15] = 514 
+demandH[16] = 113 demandH[17] = 286 demandH[18] = 410 demandH[19] = 399 demandH[20] = 287 demandH[21] = 69 demandH[22] = 127 demandH[23] = 402 
+minHours = 4
+maxHours = 10
+maxConsec = 3
+maxPresence = 17
+
+nNurses = 73
+demandH[0] = 21 demandH[1] = 34 demandH[2] = 14 demandH[3] = 36 demandH[4] = 12 demandH[5] = 43 demandH[6] = 44 demandH[7] = 46 
+demandH[8] = 8 demandH[9] = 26 demandH[10] = 4 demandH[11] = 19 demandH[12] = 24 demandH[13] = 47 demandH[14] = 1 demandH[15] = 7 
+demandH[16] = 6 demandH[17] = 7 demandH[18] = 34 demandH[19] = 46 demandH[20] = 41 demandH[21] = 22 demandH[22] = 45 demandH[23] = 31 
+minHours = 5
+maxHours = 11
+maxConsec = 2
+maxPresence = 21
+
+nNurses = 944
+demandH[0] = 185 demandH[1] = 114 demandH[2] = 303 demandH[3] = 286 demandH[4] = 630 demandH[5] = 202 demandH[6] = 202 demandH[7] = 307 
+demandH[8] = 300 demandH[9] = 178 demandH[10] = 370 demandH[11] = 42 demandH[12] = 570 demandH[13] = 101 demandH[14] = 265 demandH[15] = 138 
+demandH[16] = 130 demandH[17] = 279 demandH[18] = 535 demandH[19] = 456 demandH[20] = 407 demandH[21] = 393 demandH[22] = 135 demandH[23] = 22 
+minHours = 3
+maxHours = 10
+maxConsec = 6
+maxPresence = 17
+
+nNurses = 179
+demandH[0] = 78 demandH[1] = 6 demandH[2] = 41 demandH[3] = 37 demandH[4] = 91 demandH[5] = 9 demandH[6] = 115 demandH[7] = 105 
+demandH[8] = 58 demandH[9] = 17 demandH[10] = 71 demandH[11] = 51 demandH[12] = 18 demandH[13] = 20 demandH[14] = 93 demandH[15] = 11 
+demandH[16] = 102 demandH[17] = 1 demandH[18] = 28 demandH[19] = 7 demandH[20] = 74 demandH[21] = 55 demandH[22] = 46 demandH[23] = 82 
+minHours = 8
+maxHours = 10
+maxConsec = 7
+maxPresence = 15
+
+nNurses = 17
+demandH[0] = 9 demandH[1] = 2 demandH[2] = 5 demandH[3] = 6 demandH[4] = 1 demandH[5] = 9 demandH[6] = 3 demandH[7] = 4 
+demandH[8] = 6 demandH[9] = 2 demandH[10] = 7 demandH[11] = 5 demandH[12] = 2 demandH[13] = 4 demandH[14] = 1 demandH[15] = 8 
+demandH[16] = 3 demandH[17] = 8 demandH[18] = 10 demandH[19] = 8 demandH[20] = 7 demandH[21] = 8 demandH[22] = 9 demandH[23] = 6 
+minHours = 8
+maxHours = 10
+maxConsec = 5
+maxPresence = 19
+
+nNurses = 96
+demandH[0] = 7 demandH[1] = 55 demandH[2] = 47 demandH[3] = 14 demandH[4] = 19 demandH[5] = 61 demandH[6] = 1 demandH[7] = 47 
+demandH[8] = 55 demandH[9] = 1 demandH[10] = 35 demandH[11] = 59 demandH[12] = 35 demandH[13] = 34 demandH[14] = 2 demandH[15] = 35 
+demandH[16] = 9 demandH[17] = 25 demandH[18] = 25 demandH[19] = 24 demandH[20] = 38 demandH[21] = 14 demandH[22] = 9 demandH[23] = 20 
+minHours = 6
+maxHours = 11
+maxConsec = 4
+maxPresence = 13
+
+nNurses = 20
+demandH[0] = 4 demandH[1] = 7 demandH[2] = 10 demandH[3] = 0 demandH[4] = 2 demandH[5] = 10 demandH[6] = 2 demandH[7] = 10 
+demandH[8] = 7 demandH[9] = 13 demandH[10] = 11 demandH[11] = 8 demandH[12] = 3 demandH[13] = 12 demandH[14] = 6 demandH[15] = 11 
+demandH[16] = 8 demandH[17] = 13 demandH[18] = 8 demandH[19] = 1 demandH[20] = 1 demandH[21] = 3 demandH[22] = 13 demandH[23] = 2 
+minHours = 5
+maxHours = 10
+maxConsec = 7
+maxPresence = 12
+
+nNurses = 230
+demandH[0] = 26 demandH[1] = 33 demandH[2] = 54 demandH[3] = 26 demandH[4] = 155 demandH[5] = 97 demandH[6] = 56 demandH[7] = 86 
+demandH[8] = 71 demandH[9] = 142 demandH[10] = 79 demandH[11] = 76 demandH[12] = 32 demandH[13] = 158 demandH[14] = 135 demandH[15] = 51 
+demandH[16] = 106 demandH[17] = 144 demandH[18] = 99 demandH[19] = 155 demandH[20] = 61 demandH[21] = 23 demandH[22] = 30 demandH[23] = 134 
+minHours = 5
+maxHours = 9
+maxConsec = 1
+maxPresence = 17
+
+nNurses = 876
+demandH[0] = 411 demandH[1] = 254 demandH[2] = 245 demandH[3] = 185 demandH[4] = 82 demandH[5] = 105 demandH[6] = 557 demandH[7] = 118 
+demandH[8] = 126 demandH[9] = 412 demandH[10] = 390 demandH[11] = 406 demandH[12] = 593 demandH[13] = 301 demandH[14] = 521 demandH[15] = 359 
+demandH[16] = 49 demandH[17] = 531 demandH[18] = 169 demandH[19] = 583 demandH[20] = 46 demandH[21] = 483 demandH[22] = 428 demandH[23] = 505 
+minHours = 5
+maxHours = 8
+maxConsec = 1
+maxPresence = 15
+
+nNurses = 124
+demandH[0] = 62 demandH[1] = 13 demandH[2] = 51 demandH[3] = 40 demandH[4] = 8 demandH[5] = 5 demandH[6] = 76 demandH[7] = 74 
+demandH[8] = 84 demandH[9] = 67 demandH[10] = 35 demandH[11] = 50 demandH[12] = 73 demandH[13] = 2 demandH[14] = 43 demandH[15] = 9 
+demandH[16] = 0 demandH[17] = 22 demandH[18] = 6 demandH[19] = 77 demandH[20] = 31 demandH[21] = 9 demandH[22] = 45 demandH[23] = 45 
+minHours = 5
+maxHours = 12
+maxConsec = 6
+maxPresence = 23
+
+nNurses = 383
+demandH[0] = 116 demandH[1] = 69 demandH[2] = 156 demandH[3] = 55 demandH[4] = 1 demandH[5] = 122 demandH[6] = 241 demandH[7] = 34 
+demandH[8] = 216 demandH[9] = 68 demandH[10] = 107 demandH[11] = 180 demandH[12] = 219 demandH[13] = 153 demandH[14] = 161 demandH[15] = 87 
+demandH[16] = 258 demandH[17] = 93 demandH[18] = 23 demandH[19] = 155 demandH[20] = 43 demandH[21] = 71 demandH[22] = 80 demandH[23] = 69 
+minHours = 5
+maxHours = 11
+maxConsec = 2
+maxPresence = 20
+
+nNurses = 588
+demandH[0] = 170 demandH[1] = 297 demandH[2] = 110 demandH[3] = 317 demandH[4] = 237 demandH[5] = 247 demandH[6] = 171 demandH[7] = 248 
+demandH[8] = 40 demandH[9] = 116 demandH[10] = 155 demandH[11] = 6 demandH[12] = 399 demandH[13] = 219 demandH[14] = 176 demandH[15] = 271 
+demandH[16] = 74 demandH[17] = 326 demandH[18] = 188 demandH[19] = 214 demandH[20] = 169 demandH[21] = 70 demandH[22] = 285 demandH[23] = 26 
+minHours = 3
+maxHours = 8
+maxConsec = 1
+maxPresence = 15
+
+nNurses = 512
+demandH[0] = 147 demandH[1] = 217 demandH[2] = 89 demandH[3] = 78 demandH[4] = 189 demandH[5] = 113 demandH[6] = 154 demandH[7] = 155 
+demandH[8] = 184 demandH[9] = 270 demandH[10] = 185 demandH[11] = 66 demandH[12] = 118 demandH[13] = 293 demandH[14] = 350 demandH[15] = 309 
+demandH[16] = 150 demandH[17] = 80 demandH[18] = 201 demandH[19] = 91 demandH[20] = 117 demandH[21] = 52 demandH[22] = 233 demandH[23] = 176 
+minHours = 5
+maxHours = 9
+maxConsec = 1
+maxPresence = 17
+
+nNurses = 136
+demandH[0] = 86 demandH[1] = 33 demandH[2] = 49 demandH[3] = 75 demandH[4] = 38 demandH[5] = 56 demandH[6] = 63 demandH[7] = 6 
+demandH[8] = 19 demandH[9] = 41 demandH[10] = 2 demandH[11] = 71 demandH[12] = 12 demandH[13] = 22 demandH[14] = 49 demandH[15] = 70 
+demandH[16] = 4 demandH[17] = 42 demandH[18] = 53 demandH[19] = 60 demandH[20] = 52 demandH[21] = 22 demandH[22] = 82 demandH[23] = 57 
+minHours = 7
+maxHours = 12
+maxConsec = 2
+maxPresence = 20
+
+nNurses = 460
+demandH[0] = 321 demandH[1] = 21 demandH[2] = 240 demandH[3] = 250 demandH[4] = 39 demandH[5] = 52 demandH[6] = 229 demandH[7] = 309 
+demandH[8] = 193 demandH[9] = 131 demandH[10] = 130 demandH[11] = 281 demandH[12] = 103 demandH[13] = 146 demandH[14] = 203 demandH[15] = 300 
+demandH[16] = 199 demandH[17] = 237 demandH[18] = 287 demandH[19] = 103 demandH[20] = 87 demandH[21] = 140 demandH[22] = 292 demandH[23] = 192 
+minHours = 8
+maxHours = 11
+maxConsec = 3
+maxPresence = 16
+
+nNurses = 273
+demandH[0] = 142 demandH[1] = 3 demandH[2] = 165 demandH[3] = 98 demandH[4] = 151 demandH[5] = 50 demandH[6] = 99 demandH[7] = 5 
+demandH[8] = 61 demandH[9] = 131 demandH[10] = 176 demandH[11] = 63 demandH[12] = 45 demandH[13] = 139 demandH[14] = 85 demandH[15] = 96 
+demandH[16] = 157 demandH[17] = 36 demandH[18] = 75 demandH[19] = 9 demandH[20] = 110 demandH[21] = 96 demandH[22] = 183 demandH[23] = 161 
+minHours = 8
+maxHours = 12
+maxConsec = 8
+maxPresence = 13
+
