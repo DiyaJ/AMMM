@@ -1,10 +1,12 @@
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
 int greedy_cost(int a, int b);
 int isfeasible (int a, int b);
 int sum_working (int a);
+int sum_notfeasible (int a);
 int solution_feasible();
 int sum_hoursofnurse (int a);
 int min_gc(int a);
@@ -12,10 +14,12 @@ int sort_gc(int a, int b);
 int displaysol();
 int displaygc();
 
+
 const int H=8;
 const int N=12;
 int solution [H][N];
 int greedycost[H][N];
+int notfeasible_array[H][N];
 
 int demand_h[H]={2,3,5,1,4,3,1,6};
 int minHours = 4;
@@ -25,12 +29,14 @@ int maxConsec= 3;
 int nurses_h[H];
 int sol=0;
 int gc_sorted[H][N];
+float alpha=0.5;
 
 int main()
 {
  int nurse,h;
  int feasible,feasible_count;
  int working_nurse=0;
+ int elements_left, minList,maxList,minRCL,maxRCL,random,alpha_threshold;
  char ch;
  //initialising gc_sorted with nurses
  for(int m=0;m<H;m++)
@@ -39,6 +45,7 @@ int main()
      {
          gc_sorted[m][l]=l;
          solution[m][l]=0;
+         notfeasible_array[m][l]=0;
      }
  }
 for(int xx=0;xx<2;xx++)
@@ -46,22 +53,52 @@ for(int xx=0;xx<2;xx++)
 
  for(int yy=0;yy<H;yy++)
  {  if(xx==0)
- {
+    {
      h=yy;
- }
- else
- {
+    }
+    else
+    {
      h=H-1-yy;
- }
+    }
     greedy_cost(h,0);
 
    // cin>>ch;
-    feasible_count=0;
+    feasible_count=sum_notfeasible(h);
     for(int n=0;n<N;n++)
-       { //displaysol();
+       { displaysol();
+         cin>>ch;
         greedy_cost(h,0);
         sort_gc(h,0);
-        nurse=gc_sorted[h][feasible_count];
+
+
+        //RCL Logic
+        elements_left=sum_working(h);
+        minList=0;
+        maxList=N-elements_left-feasible_count-1;  // this is to restrict the list of elements to the elements that have not been chosen yet
+        cout<<"\nminList: "<<minList<<" :gc_sorted "<<gc_sorted[h][minList]<<"  greedycost:"<<greedycost[h][gc_sorted[h][minList]];
+        cout<<"\nmaxList: "<<maxList<<" :gc_sorted "<<gc_sorted[h][maxList]<<"  greedycost:"<<greedycost[h][gc_sorted[h][maxList]];
+
+        alpha_threshold=greedycost[h][gc_sorted[h][minList]]+ alpha*(greedycost[h][gc_sorted[h][maxList]]-greedycost[h][gc_sorted[h][minList]]);
+        for(int g=minList;g<=maxList;g++)
+        {
+            if(greedycost[h][gc_sorted[h][g]]<=alpha_threshold)
+            {   maxRCL=g;
+
+            }
+            else
+            {
+                g=maxList+1;
+            }
+        }
+        minRCL=0;
+        cout<<"\nmaxRCL:"<<maxRCL;
+        random= rand()%(maxRCL+1) + minRCL;
+        cout<<"\nrandom"<<random;
+        nurse=gc_sorted[h][random];
+        cout<<"\nthresh:"<<alpha_threshold<<"  minRCL:"<<greedycost[h][gc_sorted[h][minRCL]]<<"  maxRCL:"<<greedycost[h][gc_sorted[h][maxRCL]]<<" random:"<< gc_sorted[h][random];
+
+
+//        nurse=gc_sorted[h][feasible_count];
         cout<<"\n min nurse"<<nurse;
         if(greedycost[h][nurse]<1000)
         {
@@ -71,6 +108,7 @@ for(int xx=0;xx<2;xx++)
           if(!feasible)
            {
             solution[h][nurse]=0;
+            notfeasible_array[h][nurse]=1;
             feasible_count++;
            }
         }
@@ -115,7 +153,7 @@ int greedy_cost(int a, int b)
      int X3; //if minhours is not done and nurse is working
      int X4; //if the previous hour of the nurse was free and the nurse is working
      int X5; //if the hour is already assigned
-
+     int X6; //if notfeasible
      for(int i=nurse_index;i<N;i++)
      { X1=0;
        X2=0;
@@ -157,7 +195,9 @@ int greedy_cost(int a, int b)
        {
            X5=1;
        }
-       greedycost[hour][i]= 100*(1-X1)+ 1000*X2 - 1000*X3 - 2000*X4 + 2500*X5;
+       X6=notfeasible_array[hour][i];
+
+       greedycost[hour][i]= 100*(1-X1)+ 1000*X2 - 1000*X3 - 2000*X4 + 3500*X5+ 3500*X6;
 
      }
      displaygc();
@@ -168,6 +208,14 @@ int greedy_cost(int a, int b)
  { int sum=0;
      for(int i=0;i<N;i++)
      {sum+= solution[a][i];
+     }
+    return sum;
+ }
+
+ int sum_notfeasible (int a)
+ { int sum=0;
+     for(int i=0;i<N;i++)
+     {sum+= notfeasible_array[a][i];
      }
     return sum;
  }
