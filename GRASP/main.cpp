@@ -15,24 +15,62 @@ int displaysol();
 int displaygc();
 
 
-const int H=8;
-const int N=12;
-int solution [H][N];
-int greedycost[H][N];
-int notfeasible_array[H][N];
+int H;
+int N;
+int* demand_h;
+int minHours ;
+int maxHours;
+int maxPresence;
+int maxConsec;
 
-int demand_h[H]={2,3,5,1,4,3,1,6};
-int minHours = 4;
-int maxHours = 6;
-int maxPresence= 7;
-int maxConsec= 3;
-int nurses_h[H];
+int** solution;
+int** greedycost;
+int** notfeasible_array;
+int** gc_sorted;
+
 int sol=0;
-int gc_sorted[H][N];
-float alpha=0.5;
+
+float alpha=0;
+
+
+
 
 int main()
-{
+{  //Inputdata
+   cout<<"\nH: ";
+   cin>>H;
+   cout<<"\nN: ";
+   cin>>N;
+   cout<<"\nminHours: ";
+   cin>>minHours;
+   cout<<"\nmaxHours: ";
+   cin>>maxHours;
+   cout<<"\nmaxPresence: ";
+   cin>>maxPresence;
+   cout<<"\nmaxConsec: ";
+   cin>>maxConsec;
+
+   int inputdemand;
+   demand_h= new int[H];
+   cout<<"\ndemand_h:  ";
+   for(int i=0;i<H;++i)
+      {   cin>>inputdemand;
+        demand_h[i]=inputdemand;
+      }
+// allocating 2D arrays
+   solution = new int*[H];
+   greedycost = new int*[H];
+   notfeasible_array = new int*[H];
+   gc_sorted= new int*[H];
+
+   for(int i = 0; i < H; ++i)
+      {solution[i] = new int[N];
+       greedycost[i]=new int[N];
+       notfeasible_array[i] = new int[N];
+       gc_sorted[i]= new int[N];
+      }
+
+
  int nurse,h;
  int feasible,feasible_count;
  int working_nurse=0;
@@ -65,8 +103,8 @@ for(int xx=0;xx<2;xx++)
    // cin>>ch;
     feasible_count=sum_notfeasible(h);
     for(int n=0;n<N;n++)
-       { displaysol();
-         cin>>ch;
+       { //displaysol();
+         //cin>>ch;
         greedy_cost(h,0);
         sort_gc(h,0);
 
@@ -75,8 +113,8 @@ for(int xx=0;xx<2;xx++)
         elements_left=sum_working(h);
         minList=0;
         maxList=N-elements_left-feasible_count-1;  // this is to restrict the list of elements to the elements that have not been chosen yet
-        cout<<"\nminList: "<<minList<<" :gc_sorted "<<gc_sorted[h][minList]<<"  greedycost:"<<greedycost[h][gc_sorted[h][minList]];
-        cout<<"\nmaxList: "<<maxList<<" :gc_sorted "<<gc_sorted[h][maxList]<<"  greedycost:"<<greedycost[h][gc_sorted[h][maxList]];
+  //      cout<<"\nminList: "<<minList<<" :gc_sorted "<<gc_sorted[h][minList]<<"  greedycost:"<<greedycost[h][gc_sorted[h][minList]];
+  //      cout<<"\nmaxList: "<<maxList<<" :gc_sorted "<<gc_sorted[h][maxList]<<"  greedycost:"<<greedycost[h][gc_sorted[h][maxList]];
 
         alpha_threshold=greedycost[h][gc_sorted[h][minList]]+ alpha*(greedycost[h][gc_sorted[h][maxList]]-greedycost[h][gc_sorted[h][minList]]);
         for(int g=minList;g<=maxList;g++)
@@ -91,15 +129,15 @@ for(int xx=0;xx<2;xx++)
             }
         }
         minRCL=0;
-        cout<<"\nmaxRCL:"<<maxRCL;
+    //    cout<<"\nmaxRCL:"<<maxRCL;
         random= rand()%(maxRCL+1) + minRCL;
-        cout<<"\nrandom"<<random;
+    //    cout<<"\nrandom"<<random;
         nurse=gc_sorted[h][random];
-        cout<<"\nthresh:"<<alpha_threshold<<"  minRCL:"<<greedycost[h][gc_sorted[h][minRCL]]<<"  maxRCL:"<<greedycost[h][gc_sorted[h][maxRCL]]<<" random:"<< gc_sorted[h][random];
+    //    cout<<"\nthresh:"<<alpha_threshold<<"  minRCL:"<<greedycost[h][gc_sorted[h][minRCL]]<<"  maxRCL:"<<greedycost[h][gc_sorted[h][maxRCL]]<<" random:"<< gc_sorted[h][random];
 
 
 //        nurse=gc_sorted[h][feasible_count];
-        cout<<"\n min nurse"<<nurse;
+     //   cout<<"\n min nurse"<<nurse;
         if(greedycost[h][nurse]<1000)
         {
          solution[h][nurse]=1;
@@ -117,7 +155,7 @@ for(int xx=0;xx<2;xx++)
             solution[h][nurse]=0;
         }
         if(sum_working(h)== demand_h[h])
-        {   cout<<"\nsum of working nurses in hour:"<<h<<" is "<<sum_working(h);
+        { //  cout<<"\nsum of working nurses in hour:"<<h<<" is "<<sum_working(h);
 
         }
        }
@@ -200,7 +238,7 @@ int greedy_cost(int a, int b)
        greedycost[hour][i]= 100*(1-X1)+ 1000*X2 - 1000*X3 - 2000*X4 + 3500*X5+ 3500*X6;
 
      }
-     displaygc();
+ //    displaygc();
      return 0;
  }
 
