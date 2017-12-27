@@ -99,7 +99,7 @@ int main()
  }
 cout<<"\n Starting GRASP....";
 // local search iterations
-for(int local_iter=0; local_iter<10; local_iter++)
+for(int local_iter=0; local_iter<2; local_iter++)
 { SS=2;
 
     if(local_iter!=0)
@@ -147,9 +147,9 @@ for(int xx=0;xx<SS;xx++)
     }
     greedy_cost(h,0);
 
-
+    maxList=N;
     feasible_count=sum_notfeasible(h);
-    for(int n=0;n<N;n++)
+    for(int n=0;n<maxList;n++)
        { //displaysol();
          //cin>>ch;
         greedy_cost(h,0);
