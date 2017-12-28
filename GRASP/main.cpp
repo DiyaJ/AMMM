@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include "GRASP_InputData.h"
 
 using namespace std;
 
@@ -16,13 +17,13 @@ int displaybestsol();
 int displaygc();
 int local_search(int a);
 
-int H;
+/*int H;
 int N;
 int* demand_h;
 int minHours ;
 int maxHours;
 int maxPresence;
-int maxConsec;
+int maxConsec;*/
 
 int** solution;
 int** solution_best;
@@ -42,7 +43,7 @@ float alpha=0.2;
 
 int main()
 {  //Inputdata
-   cout<<"\nH: ";
+   /*cout<<"\nH: ";
    cin>>H;
    cout<<"\nN: ";
    cin>>N;
@@ -61,7 +62,7 @@ int main()
    for(int i=0;i<H;++i)
       {   cin>>inputdemand;
         demand_h[i]=inputdemand;
-      }
+      }*/
 // allocating 2D arrays
    solution = new int*[H];
    solution_best = new int* [H];
@@ -99,7 +100,7 @@ int main()
  }
 cout<<"\n Starting GRASP....";
 // local search iterations
-for(int local_iter=0; local_iter<2; local_iter++)
+for(int local_iter=0; local_iter<10; local_iter++)
 { SS=2;
 
     if(local_iter!=0)
@@ -233,11 +234,11 @@ for(int xx=0;xx<SS;xx++)
             }
         }
        }
-       displaysol();
+   //    displaysol();
        cout<<"\n"<<working_nurse<<" out of "<<N<<" nurses are working.";
 
 
-    displaysol();
+//    displaysol();
 }
 if(bestsol)
 {cout<<"\n The Final solution is:";
@@ -248,7 +249,7 @@ else
 {
     cout<<"\n A solution to this problem cannot be found via GRASP";
 }
- cin>>ch;
+// cin>>ch;
     return 0;
 }
 
@@ -348,7 +349,7 @@ int greedy_cost(int a, int b)
 
      //maxHours
      if(sum_hoursofnurse(nurse)>maxHours)
-     {  cout<<"\nMaxhours not feasible hour:"<<hour<<" nurse:"<<nurse;
+     { // cout<<"\nMaxhours not feasible hour:"<<hour<<" nurse:"<<nurse;
         return 0;
 
      }
@@ -372,7 +373,7 @@ int greedy_cost(int a, int b)
      if(flag)
      {
          if((last_hour-first_hour+1)>maxPresence)
-         {   cout<<"\nMaxPresence not feasible hour:"<<hour<<" nurse:"<<nurse;
+         {  // cout<<"\nMaxPresence not feasible hour:"<<hour<<" nurse:"<<nurse;
              return 0;
          }
      }
@@ -395,7 +396,7 @@ int greedy_cost(int a, int b)
          consec_hours_forw++;
      }
      if( (consec_hours_back+consec_hours_forw-solution[hour][nurse]) > maxConsec )
-     {   cout<<"\nMaxConsec not feasible hour:"<<hour<<" nurse:"<<nurse;
+     { //  cout<<"\nMaxConsec not feasible hour:"<<hour<<" nurse:"<<nurse;
          return 0;
      }
      return 1;
@@ -409,7 +410,7 @@ int greedy_cost(int a, int b)
      {   hoursofnurse=sum_hoursofnurse(i);
          //minHours
           if(hoursofnurse!=0 && hoursofnurse<minHours)
-          { cout<<"minhours"<<i;
+          { //cout<<"minhours"<<i;
               return 0;
           }
           //consec_resting
@@ -433,11 +434,11 @@ int greedy_cost(int a, int b)
 
            if(flag)
            {
-               cout<<"\nfirst_hour:"<<first_hour<<"last_hour:"<<last_hour;
+               //cout<<"\nfirst_hour:"<<first_hour<<"last_hour:"<<last_hour;
                for(int f=first_hour;f<=last_hour;f++)
                {
                    if(!solution[f][i]&& !solution[f+1][i])
-                   { cout<<"consecrest"<<i<<"\tf:"<<f;
+                   { //cout<<"consecrest"<<i<<"\tf:"<<f;
                      return 0;
                    }
                }
@@ -449,7 +450,7 @@ int greedy_cost(int a, int b)
      for(int w=0;w<H;w++)
      {
          if(sum_working(w)<demand_h[w])
-         {   cout<<"demandh"<<w;
+         {  // cout<<"demandh"<<w;
              return 0;
          }
      }
@@ -489,10 +490,11 @@ int greedy_cost(int a, int b)
  { char ch;
      cout<<"\n The best solution is: \n";
      for(int i=0; i<N; i++)
-     {  cout<<"\n Nurse "<<i<<":";
+     {  //cout<<"\n Nurse "<<i<<":";
+        cout<<"\n";
          for(int j=0;j<H; j++)
          {
-             cout<<"\t"<< solution_best[j][i];
+             cout<< solution_best[j][i]<<",";
          }
 
      }
@@ -534,7 +536,15 @@ int sort_gc(int a, int b)
 
 int local_search(int a)
 { int gotthenurse=0;
+//putting the previous remove nurse back to feasible
+  if(remove_nurse>=0)
+  {   for(int i=0;i<H;i++)
+  {
+    notfeasible_array[i][remove_nurse]=0;
+  }
+  }
 
+   // Updating Remove_nurse
     for(int b= remove_nurse+1;b<N;b++)
     {
         if(sum_hoursofnurse(b)!=0 && gotthenurse==0)
@@ -554,9 +564,9 @@ int local_search(int a)
     for(int i=0; i<H;i++)
     {
         solution[i][remove_nurse]=0;
-//        notfeasible_array[i][remove_nurse]=1;   // so that this nurse doesn't get picked again
+        notfeasible_array[i][remove_nurse]=1;   // so that this nurse doesn't get picked again
     }
     cout<<"\n Nurse Removed:"<<remove_nurse;
-    displaysol();
+  //  displaysol();
     return 0;
 }
