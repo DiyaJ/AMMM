@@ -100,6 +100,21 @@ Individual BRKGA::getBestFitness() {
 	return this->Population[0];
 }
 
+vector<float> BRKGA::createChromosomeFromSolution(vector<float> inputSolution, int nNurses, int totalHours)
+{
+	vector<float> Chromosome(nNurses + inputSolution.size(), 0);
+	
+	for (int i=0; i < nNurses; i++) {
+		for (int j=0; j<totalHours; j++) if(inputSolution[i*totalHours+j]) Chromosome[i] = 0.85;
+	}
+	
+	for (int i=0; i < inputSolution.size(); i++) {
+		if (inputSolution[i]) Chromosome[i+nNurses] = 0.85;
+	}
+	
+	return Chromosome;
+}
+
 void BRKGA::printPopulation() {
 
 	cout << "*Properties of the population*" << endl;

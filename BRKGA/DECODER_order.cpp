@@ -16,7 +16,7 @@ void DECODER_order::decode(vector<Individual> &population, vector<float> Tasks, 
                 std::pair< vector<float>, float> solutionFitness = decoder_order(Tasks, Computers, Cost, population[i].chromosome);
                 // Clear the previous solution and assign the new one
                 population[i].solution.clear();
-                population[i].solution.insert(population[i].solution.begin(), solutionFitness.first.begin(), solutionFitness.first.end());;
+                population[i].solution.insert(population[i].solution.begin(), solutionFitness.first.begin(), solutionFitness.first.end());
                 population[i].fitness = solutionFitness.second;
         }
 }
@@ -51,25 +51,25 @@ std::pair< vector<float>, float> DECODER_order::decoder_order(vector<float> Task
 	sort(chr_task_indexed.begin(), chr_task_indexed.end(), compareByIndex);
 	
 	vector <std::pair<float, int> > chr_computer_indexed(chr_computer_unindexed.size());
-        for (int i = 0; i < chr_computer_indexed.size(); i++) chr_computer_indexed[i] = std::make_pair(chr_computer_unindexed[i], i);
-        sort(chr_computer_indexed.begin(), chr_computer_indexed.end(), compareByIndex);
+  for (int i = 0; i < chr_computer_indexed.size(); i++) chr_computer_indexed[i] = std::make_pair(chr_computer_unindexed[i], i);
+  sort(chr_computer_indexed.begin(), chr_computer_indexed.end(), compareByIndex);
 
 
-        for (int ii = 0; ii < chr_task_indexed.size(); ii++) {
-		int i = chr_task_indexed[ii].second;
-		int assigned = 0;
-		for (int ru = 0; ru < roundUsed.size(); ru++) {
-        		for (int jj = 0; jj < chr_computer_indexed.size(); jj++) {        
-				int j = chr_computer_indexed[jj].second;
-				if ((used[j] == roundUsed[ru]) && ((Computers[j] - Tasks[i]) < 0)) continue;
-				if (used[j] == 0) used[j] = 1;
-				solutionFitness.first[i] = j;
-				Computers[j] -= Tasks[i];
-				if (rem > (Computers[j] / ComputersAux[j])) rem = (Computers[j] / ComputersAux[j]);
-				assigned = 1;
-				break;
-			}
-			if (assigned) break;
+    for (int ii = 0; ii < chr_task_indexed.size(); ii++) {
+			int i = chr_task_indexed[ii].second;
+			int assigned = 0;
+			for (int ru = 0; ru < roundUsed.size(); ru++) {
+      		for (int jj = 0; jj < chr_computer_indexed.size(); jj++) {        
+						int j = chr_computer_indexed[jj].second;
+						if ((used[j] == roundUsed[ru]) && ((Computers[j] - Tasks[i]) < 0)) continue;
+						if (used[j] == 0) used[j] = 1;
+						solutionFitness.first[i] = j;
+						Computers[j] -= Tasks[i];
+						if (rem > (Computers[j] / ComputersAux[j])) rem = (Computers[j] / ComputersAux[j]);
+						assigned = 1;
+						break;
+					}
+				if (assigned) break;
 		}
 		if (!assigned) {
 			solutionFitness.first.clear();

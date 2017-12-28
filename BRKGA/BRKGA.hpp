@@ -31,6 +31,7 @@ public:
 	vector<Individual> generateMutantIndividuals(int numMutants, int chrLength);
 	vector<Individual> doCrossover(vector<Individual> elite, vector<Individual> nonElite, float ro, int numCrossover);
 	Individual getBestFitness();
+	vector<float> createChromosomeFromSolution(vector<float> inputSolution, int nNurses, int totalHours);
 
 	//bool compareByFitness(const Individual &a, const Individual &b);
 	void printPopulation();
