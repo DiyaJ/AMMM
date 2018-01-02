@@ -102,15 +102,106 @@ Individual BRKGA::getBestFitness() {
 
 vector<float> BRKGA::createChromosomeFromSolution(vector<float> inputSolution, int nNurses, int totalHours)
 {
-	vector<float> Chromosome(nNurses + inputSolution.size(), 0);
+	//vector<float> Chromosome(nNurses + inputSolution.size(), 0);
+	//vector<float> Chromosome(nNurses, 0);
+	vector<float> Chromosome(2*nNurses, 0);
+	int workingNurses = 0;
+	vector<int> indexWorkingNurses(nNurses, 0);
+	srand(time(NULL));
 	
+	/*
 	for (int i=0; i < nNurses; i++) {
-		for (int j=0; j<totalHours; j++) if(inputSolution[i*totalHours+j]) Chromosome[i] = 0.9;
+		for (int j=0; j<totalHours; j++) if(inputSolution[i*totalHours+j]) Chromosome[i] = 0.7 + (float)(0.3 * (rand()) / (RAND_MAX + 1.0));
 	}
+	*/
+	/*
+	for (int i=0; i < nNurses; i++) {
+		for (int j=0; j<totalHours; j++) {
+			if(inputSolution[i*totalHours+j]) {
+				indexWorkingNurses[workingNurses] = i; 
+				Chromosome[workingNurses] = 0.75 + (float)(0.25 * (rand()) / (RAND_MAX + 1.0)); 
+				workingNurses++; 
+				break;
+			}
+		}
+	}
+	for (int i=0; i < workingNurses; i++) cout << indexWorkingNurses[i] << " ";
+	cout << endl;
+	cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
 	
+	for (int i=0; i < workingNurses; i++) {
+		for (int j=0; j<totalHours; j++) {
+			if (inputSolution[indexWorkingNurses[i]*totalHours+j] == 1) Chromosome[i*totalHours + j + nNurses] = 0.85;
+			//cout << inputSolution[indexWorkingNurses[i]*totalHours+j] << " ";
+		}
+		//cout << endl;
+	}
+	*/
+	/*
 	for (int i=0; i < inputSolution.size(); i++) {
 		if (inputSolution[i]) Chromosome[i+nNurses] = 0.85;
 	}
+	*/
+	/*
+	for (int i=0; i < nNurses; i++) cout << Chromosome[i] << " ";
+	cout << endl;
+	cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+	for (int i=0; i < nNurses; i++) {
+		for (int j=0; j<totalHours; j++)
+			cout << Chromosome[i*totalHours + j + nNurses] << " ";
+		cout << endl;
+	}
+	*/
+	
+	for(int k=0;k<nNurses;k++) { 
+		float i=0.5;
+    Chromosome[nNurses+k]=0;
+    // assigning the second set of alleles
+    for(int j=0;j<totalHours;j++) {
+			if(inputSolution[k*totalHours + j]==1) {
+				Chromosome[nNurses+k]+=i;
+			}
+			i=i/2;
+		}
+		// assigning the first set of alleles
+		if(Chromosome[nNurses+k]==0) {
+			Chromosome[k]=0.4;     //chosen 0.4 just because it is less than 0.5
+		}
+		else {
+			Chromosome[k]=0.8;     //chosen 0.8 because it is greater than 0.5
+		}
+	}
+	
+	#if 0
+	// Decoding the chromosome
+	 for (int k=0; k<nNurses;k++) { 
+			//if the first set allele>0.5 , make the nurse work and decode the schedule from the second set allele
+			if(Chromosome[k]>0.5) {
+				workingNurses++;
+				float i = 0.5;
+				for (int j =0; j <totalHours; j++) {
+					if(Chromosome[nNurses + k]>=i) {
+						 //cout << "1 ";
+						 Chromosome[nNurses + k] = Chromosome[nNurses + k]-i;
+					}
+					//else cout << "0 ";
+				 	i=i/2;
+				}
+				//cout << endl;
+			}
+			//else cout << "All 0" << endl;
+		}
+	//cout << "workingNurses: " << workingNurses << endl;
+	cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+	#endif
+	
+	for (int i=0; i < nNurses; i++) cout << Chromosome[i] << " ";
+	cout << endl;
+	cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+	for (int i=nNurses; i < 2*nNurses; i++) {
+			cout << Chromosome[i] << " ";
+	}
+	cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
 	
 	return Chromosome;
 }

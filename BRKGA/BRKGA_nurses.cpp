@@ -76,6 +76,11 @@ void printSolution(Individual ind, int chrLength, vector<float> demand_h)
 	}
 }
 
+void dummyDecode(float chr)
+{
+	cout << "dummy chr: " << chr << endl;
+}
+
 int main() {
 	// initializations
 	int numElite = (int)numIndividuals*eliteProp;
@@ -91,24 +96,30 @@ int main() {
 
 	// Main body
 	//int chrLength = NNURSES * TOTAL_HOURS;
+	int chrLength = NNURSES * 2;
 	//int chrLength = NNURSES + TOTAL_HOURS;
 	//int chrLength = TOTAL_HOURS + (TOTAL_HOURS * NNURSES);
-	int chrLength = NNURSES + (TOTAL_HOURS * NNURSES);
+	//int chrLength = NNURSES + (TOTAL_HOURS * NNURSES);
+	//int chrLength = NNURSES;
 	//int chrLength = decoder.getChromosomeLength(Tasks, Computers);
 
 	brkga.initializePopulation(numIndividuals,chrLength);
 	brkga.Population[0].chromosome = brkga.createChromosomeFromSolution(GRASPSolution, NNURSES, TOTAL_HOURS);
+	//brkga.Population[1].chromosome = brkga.createChromosomeFromSolution(GRASPSolution, NNURSES, TOTAL_HOURS);
 	//brkga.Population[0].fitness = 121;
 	//#if 0
 	int i=0;
 	float lastFitness = 0;
+	float lastSecondFitness = 0;
 	//for (int i = 0; i < maxNumGen; i++) {
-	while (i<1000) {
-		//cout << "Iteration " << i << endl;
+	while (i<150) {
+		cout << "Iteration " << i << endl;
 		cout << "bestIndividual.fitness: " << bestIndividual.fitness << endl;
+		cout << "Second bestIndividual.fitness: " << brkga.Population[1].fitness << endl;
 		i++;
 		if (lastFitness != bestIndividual.fitness) i = 0;
 		lastFitness = bestIndividual.fitness;
+		lastSecondFitness = brkga.Population[1].fitness;
 
 		vector< vector<Individual> > classification;
 		vector<Individual> elite;
@@ -116,7 +127,11 @@ int main() {
 		vector<Individual> mutants;
 		vector<Individual> crossover;
 
-		decoder.decode(brkga.Population, TOTAL_HOURS, NNURSES, MAXHOURS, MINHOURS, MAXCONSEC, MAXPRESENCE, demand_h, brkga.getBestFitness());
+int workingNurses=0;
+	for (int i=0; i < NNURSES; i++) if (brkga.Population[0].chromosome[i] > 0.5) workingNurses++;
+	//cout << "workingNurses: " << workingNurses << " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
+
+		decoder.decode(brkga.Population, TOTAL_HOURS, NNURSES, MAXHOURS, MINHOURS, MAXCONSEC, MAXPRESENCE, demand_h/*, brkga.getBestFitness()*/);
 		evol.insert(evol.end(), brkga.getBestFitness());
 		bestIndividual = brkga.getBestFitness();
 /*		
@@ -142,12 +157,14 @@ int main() {
     
   }
 
-	decoder.decode(brkga.Population, TOTAL_HOURS, NNURSES, MAXHOURS, MINHOURS, MAXCONSEC, MAXPRESENCE, demand_h, brkga.getBestFitness());
+	//decoder.decode(brkga.Population, TOTAL_HOURS, NNURSES, MAXHOURS, MINHOURS, MAXCONSEC, MAXPRESENCE, demand_h, brkga.getBestFitness());
 	bestIndividual = brkga.getBestFitness();
 	cout << "*Fitness of each generation*" << endl;
 	for (int j=0; j<evol.size(); j++) { brkga.printIndividualFitness(evol[j]); cout << endl; }
-	cout << "Properties of the best individual" << endl;
+	//cout << "Properties of the best individual" << endl;
+	cout << "Properties of the SECOND best individual" << endl;
 	//brkga.printIndividual(bestIndividual);
-	printSolution(bestIndividual, chrLength, demand_h);
+	//printSolution(bestIndividual, chrLength, demand_h);
+	printSolution(brkga.Population[1], chrLength, demand_h);
 	//#endif
 }
