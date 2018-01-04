@@ -33,6 +33,7 @@ forall(n in N)
 //working for a maximum number of hours
 forall(n in N)
     sum(h in H) x_nh[n][h]<=maxHours;    
+<<<<<<< HEAD
 // Constraint 3
 //no consecutive resting hour
 forall( n in N, h in H){
@@ -40,6 +41,9 @@ forall( n in N, h in H){
     3-(sum(i in (h..(h+t)) )x_nh[n][i]) + 10*(x_nh[n][h]+x_nh[n][h+t]-2) <= 0;
  }
 }    
+=======
+  
+>>>>>>> eeee5d5bd75aefed2ca1a3cbb55fc86dd114e901
 // Constraint 4
 //consecutive working hours not more than maxConsec
 forall( n in N, h in H)
@@ -57,6 +61,14 @@ forall(h in H)
 // Nurse Working or Not
 forall(n in N)
   25*Working_Nurse[n] >=sum(h in H)x_nh[n][h];
+ 
+ // Constraint 3
+//no consecutive resting hour
+forall( n in N, h in H){
+  forall(t in h+3..h+maxPresence:t<=total_hours){
+    3-(sum(i in (h..t) )x_nh[n][i]) + 10*(x_nh[n][h]+x_nh[n][t]-2) <= 0;
+ }
+}  
   
 // Sum of Working Nurses  
  z== sum(n in N )Working_Nurse[n]; 
