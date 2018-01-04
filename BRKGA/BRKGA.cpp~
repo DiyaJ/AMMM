@@ -3,15 +3,18 @@
 #include <time.h>
 #include <algorithm>
 #include <climits>
+#include <random>
 
 void BRKGA::initializePopulation(int numIndividuals, int chrLength) {
 
 	this->numIndividuals = numIndividuals;
 	this->chrLength = chrLength;
 
-	srand(time(NULL));
+	//srand(time(NULL));
 	//Set the number of Individuals
 	this->Population = vector<Individual>(numIndividuals);
+	
+  std::random_device rd;
 
 	//For each individual, initialize randomly its chromosome array
 	//Their fitness are uncalculated (-1) and their solutions are empty
@@ -19,8 +22,8 @@ void BRKGA::initializePopulation(int numIndividuals, int chrLength) {
 		Population[i].chromosome = vector<float>(chrLength);
 		Population[i].fitness = INT_MAX;
 		for (int j = 0; j < chrLength; j++)
-			Population[i].chromosome[j] = ((float)rand() / (RAND_MAX));
-	}
+			Population[i].chromosome[j] = (rd() / rd.max());
+			
 }
 
 void BRKGA::createPopulation(vector<Individual> elite, vector<Individual> crossover, vector<Individual> mutants) {
@@ -172,12 +175,13 @@ vector<float> BRKGA::createChromosomeFromSolution(vector<float> inputSolution, i
 		}
 	}
 	
-	#if 0
+	//#if 0
 	// Decoding the chromosome
 	 for (int k=0; k<nNurses;k++) { 
 			//if the first set allele>0.5 , make the nurse work and decode the schedule from the second set allele
 			if(Chromosome[k]>0.5) {
 				workingNurses++;
+				/*
 				float i = 0.5;
 				for (int j =0; j <totalHours; j++) {
 					if(Chromosome[nNurses + k]>=i) {
@@ -186,14 +190,14 @@ vector<float> BRKGA::createChromosomeFromSolution(vector<float> inputSolution, i
 					}
 					//else cout << "0 ";
 				 	i=i/2;
-				}
+				}*/
 				//cout << endl;
 			}
 			//else cout << "All 0" << endl;
 		}
-	//cout << "workingNurses: " << workingNurses << endl;
+	cout << "workingNurses: " << workingNurses << endl;
 	cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << endl;
-	#endif
+	//#endif
 	
 	for (int i=0; i < nNurses; i++) cout << Chromosome[i] << " ";
 	cout << endl;

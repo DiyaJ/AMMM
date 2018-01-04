@@ -3,20 +3,20 @@
 
 #include <vector>
 
-#define NNURSES 959
+#define NNURSES 557
 #define TOTAL_HOURS 24
-#define MINHOURS 6
-#define MAXHOURS 11
-#define MAXCONSEC 6
-#define MAXPRESENCE 15
+#define MINHOURS 10
+#define MAXHOURS 12
+#define MAXCONSEC 8
+#define MAXPRESENCE 18
 
 //float demand_hArray[TOTAL_HOURS] = { 8, 8, 0, 6, 3, 3, 4, 5, 5, 8, 7, 2, 3, 2, 9, 8, 6, 9, 8, 6, 5, 0, 4, 1 };
 //float demand_hArray[TOTAL_HOURS] = { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 //float demand_hArray[TOTAL_HOURS] = { 24, 48, 34, 20, 33, 16, 22, 19, 12, 34, 34, 11, 15, 22, 31, 58, 30, 9, 28, 32, 27, 35, 27, 1 };
 //float demand_hArray[TOTAL_HOURS] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-float demand_hArray[TOTAL_HOURS] = { 15, 554, 422, 48, 403, 32, 341, 185, 52, 54, 31, 233, 109, 237, 159, 166, 132, 30, 352, 24, 237, 41, 233, 51 };
+float demand_hArray[TOTAL_HOURS] = { 80, 17, 11, 16, 13, 51, 29, 16, 31, 219, 19, 31, 59, 41, 60, 10, 316, 35, 36, 176, 3, 19, 67, 272 };
 vector<float> demand_h(demand_hArray, demand_hArray + sizeof(demand_hArray) / sizeof(float));
-
+/*
 float GRASPSolutionArray[TOTAL_HOURS * NNURSES] = 
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,
 0,1,1,1,1,1,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,
@@ -979,5 +979,5 @@ float GRASPSolutionArray[TOTAL_HOURS * NNURSES] =
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1};
 
 vector<float> GRASPSolution(GRASPSolutionArray, GRASPSolutionArray + sizeof(GRASPSolutionArray) / sizeof(float));
-
+*/
 #endif

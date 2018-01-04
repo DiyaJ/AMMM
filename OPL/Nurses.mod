@@ -36,7 +36,7 @@ forall(n in N)
 // Constraint 3
 //no consecutive resting hour
 forall( n in N, h in H){
-  forall(t in h+3..maxPresence:h+t<=total_hours){
+  forall(t in 3..maxPresence:h+t<=total_hours){
     3-(sum(i in (h..(h+t)) )x_nh[n][i]) + 10*(x_nh[n][h]+x_nh[n][h+t]-2) <= 0;
  }
 }    

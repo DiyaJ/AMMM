@@ -3,15 +3,18 @@
 #include <time.h>
 #include <algorithm>
 #include <climits>
+#include <random>
 
 void BRKGA::initializePopulation(int numIndividuals, int chrLength) {
 
 	this->numIndividuals = numIndividuals;
 	this->chrLength = chrLength;
 
-	srand(time(NULL));
+	//srand(time(NULL));
 	//Set the number of Individuals
 	this->Population = vector<Individual>(numIndividuals);
+	
+  std::random_device rd;
 
 	//For each individual, initialize randomly its chromosome array
 	//Their fitness are uncalculated (-1) and their solutions are empty
@@ -19,7 +22,7 @@ void BRKGA::initializePopulation(int numIndividuals, int chrLength) {
 		Population[i].chromosome = vector<float>(chrLength);
 		Population[i].fitness = INT_MAX;
 		for (int j = 0; j < chrLength; j++)
-			Population[i].chromosome[j] = ((float)rand() / (RAND_MAX));
+			Population[i].chromosome[j] = (rd() / rd.max());
 	}
 }
 
