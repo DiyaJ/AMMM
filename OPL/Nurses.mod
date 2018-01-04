@@ -1,6 +1,5 @@
 /*********************************************
  * OPL 12.7.0.0 Model
- * Author: Diya Joseph
  * Creation Date: 27-Nov-2017 at 10:29:36 pm
  *********************************************/
 
@@ -13,22 +12,13 @@ int maxPresence=...;
 
 range N=1..nNurses;
 range H=1..total_hours;
-range T=3..total_hours-1;
+range T=3..maxPresence;
 
 int demand_h[h in H]=...;
 
 dvar boolean x_nh[n in N, h in H];
-dvar boolean Sum_n[n in N];
 dvar boolean Working_Nurse[n in N];
 dvar int z;
-/*execute {
-var totalLoad=0;
-for (var h=1;h<=nThreads;h++)
-totalLoad += rh[h];
-writeln("Total load "+ totalLoad);
-
-};
-*/
 
 // Objective
 minimize z;
@@ -68,23 +58,5 @@ forall(n in N)
   
 // Sum of Working Nurses  
  z== sum(n in N )Working_Nurse[n]; 
-    
 
 }
-
-/*execute {
-
-for (var c=1;c<=nCPUs;c++) {
-var load=0;
-for(var t=1;t<=nTasks;t++){
-for (var h=1;h<=nThreads;h++)
-{load+=(rh[h]* x_tc[t][c]*TH[t][h]);
-// writeln("CPU " + c + " loaded at " + load + " "+ h);
-//writeln("CPU " + c + " loaded at t: "+ t + " h:"+ h + " "+ load + "%");
-}
-}
-load = (1/(3*rc[c]))*load;
-writeln("CPU " + c + " loaded at " + load + "%");
-}
-};
-*/ 
